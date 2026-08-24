@@ -1,13 +1,7 @@
-// Creates the database + contacts table automatically if they
-// do not already exist. Runs a plain mysql2 connection (not the
-// pool, since the pool is bound to a specific database name that
-// may not exist yet on a first-ever run).
 const mysql = require("mysql2/promise");
 require("dotenv").config();
-
 async function initDb() {
-  const dbName = process.env.DB_NAME || "rockwell_1111";
-
+  const dbName = process.env.DB_NAME || "rockwell_db";
   const connection = await mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT || 3306,
