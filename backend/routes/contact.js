@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../config/db");
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[0-9+\-\s()]{7,20}$/;
-
-// POST /api/contact  — save a "Contact Us" form submission
 router.post("/", async (req, res) => {
   try {
     const { name, email, phone, message, sourcePage } = req.body;
@@ -35,8 +32,6 @@ router.post("/", async (req, res) => {
     return res.status(500).json({ success: false, error: "Something went wrong. Please try again later." });
   }
 });
-
-// GET /api/contact — list submissions (useful for an admin view / testing)
 router.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query(
