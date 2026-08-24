@@ -18,7 +18,7 @@ export default function Footer() {
         <div>
           <p className="text-gold text-xs tracking-widest2 uppercase mb-4">Explore</p>
           <ul className="space-y-2 text-sm">
-            <li><a href="#overview" className="hover:text-gold transition-colors">Overview</a></li>
+            <li><a href="#overview" className="hover:text-gold transition-colors">Home</a></li>
             <li><a href="#location" className="hover:text-gold transition-colors">Location</a></li>
             <li><a href="#amenities" className="hover:text-gold transition-colors">Amenities</a></li>
             <li><a href="#floor-plan" className="hover:text-gold transition-colors">Floor Plan</a></li>
@@ -35,8 +35,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="tel:+912200000000" className="hover:text-gold transition-colors">
-                +91 22 0000 0000
+              <a href="tel:+91 9819999337" className="hover:text-gold transition-colors">
+                +91 9819999337
               </a>
             </li>
           </ul>

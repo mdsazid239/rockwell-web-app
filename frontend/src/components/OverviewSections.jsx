@@ -1,6 +1,5 @@
 import React from "react";
 import SplitSection from "./SplitSection.jsx";
-
 export default function OverviewSections() {
   return (
     <div id="overview">
@@ -14,9 +13,8 @@ export default function OverviewSections() {
         tagline="Because exceptional businesses deserve more than space. They deserve presence."
         image="/images/tower-day.jpg"
         imageAlt="11:11 Business Park tower exterior in daylight"
-        imageSide="right"
+        imageSide="left"
       />
-
       <SplitSection
         heading="Credibility begins at the entrance."
         body={[
@@ -27,19 +25,17 @@ export default function OverviewSections() {
         imageAlt="11:11 Business Park grand lobby entrance"
         imageSide="right"
       />
-
       <SplitSection
         heading="The best decisions need room to think."
         body={[
           "Generous floor plates, abundant natural light and efficient planning create workplaces that feel open, adaptable and future-ready.",
           "Designed to accommodate evolving business needs, the spaces encourage clarity, productivity and seamless collaboration.",
         ]}
-        tagline="Because reputation is often established before the first meeting begins."
+        tagline="Because great workplaces give great ideas room to grow."
         image="/images/boardroom.jpg"
         imageAlt="11:11 Business Park boardroom with skyline view"
         imageSide="left"
       />
-
       <SplitSection
         heading="Efficiency is the most underrated luxury."
         body={[
