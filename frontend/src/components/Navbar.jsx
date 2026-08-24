@@ -6,32 +6,23 @@ const LINKS = [
   { label: "Amenities", href: "#amenities" },
   { label: "Floor Plan", href: "#floor-plan" },
 ];
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const { openContact } = useContactModal();
-
-  // Detect page scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  // Close mobile menu when clicking a link
+  }, [])
   const handleLinkClick = (href) => {
     setMenuOpen(false);
-
     const element = document.querySelector(href);
-
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
@@ -39,18 +30,13 @@ export default function Navbar() {
       });
     }
   };
-
-  // Open contact modal
   const handleContactClick = (source) => {
     setMenuOpen(false);
     openContact(source);
   };
-
-  // Go to top
   const handleLogoClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -69,7 +55,6 @@ export default function Navbar() {
             scrolled ? "h-16" : "h-20"
           }`}
         >
-          {/* ================= LOGO ================= */}
           <a
             href="#top"
             onClick={handleLogoClick}
@@ -83,7 +68,7 @@ export default function Navbar() {
               Double check the exact file name + extension on disk.
             */}
             <img
-              src="/images/logo-rockwell.jpg"
+              src="/images/rockwell-logo3.png"
               alt="Rockwell Developer"
               className="block w-auto h-10 sm:h-11 lg:h-12 object-contain"
             />
@@ -114,8 +99,6 @@ export default function Navbar() {
               Contact Us
             </button>
           </div>
-
-          {/* ================= MOBILE MENU BUTTON ================= */}
           <button
             type="button"
             className="lg:hidden flex items-center justify-center w-10 h-10 text-cream focus:outline-none"
@@ -143,8 +126,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-
-      {/* ================= MOBILE MENU ================= */}
       <div
         className={`lg:hidden overflow-hidden bg-navy border-t border-white/10 transition-all duration-300 ${
           menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"

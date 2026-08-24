@@ -21,7 +21,7 @@ export default function LocationSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          <div className="corner-frame bg-cream px-7 py-10 sm:px-10 sm:py-12">
+          <div className="corner-frame  px-7 py-10 sm:px-10 sm:py-12">
             <p className="text-navy/80 text-sm sm:text-[15px] leading-relaxed mb-3">
               At the intersection of commerce, culture and connectivity lies one of Mumbai's most
               influential business districts.
@@ -54,7 +54,7 @@ export default function LocationSection() {
             <img
               src="/images/location-map.jpg"
               alt="Map showing 11:11 Business Park location on Linking Road, Bandra West with connectivity to BKC and the airport"
-              className="w-full h-full object-contain bg-cream/40"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>

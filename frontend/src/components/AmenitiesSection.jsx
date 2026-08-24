@@ -23,7 +23,7 @@ export default function AmenitiesSection() {
         </div>
 
         <div className="lg:px-14">
-          <div className="corner-frame bg-cream px-7 py-10 sm:px-10 sm:py-12 max-w-xl mx-auto lg:mx-0">
+          <div className="corner-frame  px-7 py-10 sm:px-10 sm:py-12 max-w-xl mx-auto lg:mx-0">
             <h2 className="font-serif text-2xl sm:text-3xl text-navy leading-snug mb-5">
               Designed for what happens between meetings.
             </h2>
