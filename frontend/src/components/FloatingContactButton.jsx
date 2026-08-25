@@ -1,9 +1,7 @@
 import React from "react";
 import { useContactModal } from "../context/ContactContext.jsx";
-
 export default function FloatingContactButton() {
   const { openContact } = useContactModal();
-
   return (
     <button
       onClick={() => openContact("Floating Button")}

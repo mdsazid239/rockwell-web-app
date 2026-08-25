@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function FloorPlanSection() {
   return (
     <section id="floor-plan" className="bg-navy py-14 sm:py-20">
@@ -12,7 +11,6 @@ export default function FloorPlanSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
-
         <div className="order-1 lg:order-2 lg:px-14 text-center lg:text-left">
           <div className="corner-frame bg-cream inline-block px-7 py-8 sm:px-10 sm:py-9 mb-8">
             <h2 className="font-serif text-2xl sm:text-3xl text-navy leading-snug">
@@ -20,7 +18,6 @@ export default function FloorPlanSection() {
             </h2>
             <p className="text-navy/70 text-sm mt-2 italic">Where every corner has a reason</p>
           </div>
-
           <div className="w-full overflow-hidden border border-gold/20">
             <img
               src="/images/floor-plan.jpg"

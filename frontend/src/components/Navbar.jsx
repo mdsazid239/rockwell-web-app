@@ -61,20 +61,12 @@ export default function Navbar() {
             className="flex items-center shrink-0"
             aria-label="Rockwell Developer"
           >
-            {/*
-              File must actually exist at: public/images/logo-rockwell.jpg
-              (public/ is served at the site root by Vite/CRA, so no
-              "public" prefix and no import needed here).
-              Double check the exact file name + extension on disk.
-            */}
             <img
               src="/images/rockwell-logo3.png"
               alt="Rockwell Developer"
               className="block w-auto h-10 sm:h-11 lg:h-12 object-contain"
             />
           </a>
-
-          {/* ================= DESKTOP NAV ================= */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             <ul className="flex items-center gap-6 xl:gap-8">
               {LINKS.map((link) => (
@@ -90,7 +82,6 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-
             <button
               type="button"
               onClick={() => handleContactClick("Navbar")}
@@ -144,7 +135,6 @@ export default function Navbar() {
                 </button>
               </li>
             ))}
-
             <li className="pt-2">
               <button
                 type="button"

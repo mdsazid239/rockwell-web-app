@@ -1,5 +1,4 @@
 import React from "react";
-
 const POINTS = [
   "Prime address on Linking Road",
   "Minutes from Bandra Station",
@@ -7,7 +6,6 @@ const POINTS = [
   "Easy access to Western Express Highway",
   "Close proximity to premium hotels and business hubs",
 ];
-
 export default function LocationSection() {
   return (
     <section id="location" className="bg-white py-14 sm:py-20">
@@ -19,7 +17,6 @@ export default function LocationSection() {
             className="w-full h-full object-cover"
           />
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="corner-frame  px-7 py-10 sm:px-10 sm:py-12">
             <p className="text-navy/80 text-sm sm:text-[15px] leading-relaxed mb-3">
@@ -49,7 +46,6 @@ export default function LocationSection() {
               ))}
             </ul>
           </div>
-
           <div className="h-[40vh] sm:h-[50vh] lg:h-full w-full overflow-hidden">
             <img
               src="/images/location-map.jpg"
