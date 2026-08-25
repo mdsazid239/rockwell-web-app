@@ -19,7 +19,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [])
+  }, []);
   const handleLinkClick = (href) => {
     setMenuOpen(false);
     const element = document.querySelector(href);
@@ -61,10 +61,15 @@ export default function Navbar() {
             className="flex items-center shrink-0"
             aria-label="Rockwell Developer"
           >
-            <img
-              src="/images/rockwell-logo3.png"
+            {/* <img
+              src="/images/Rockwell_Logo_White.png"
               alt="Rockwell Developer"
               className="block w-auto h-10 sm:h-11 lg:h-12 object-contain"
+            /> */}
+            <img
+              src="/images/Rockwell_Logo_White.png"
+              alt="Rockwell Developer"
+              className="block w-auto h-10 sm:h-11 lg:h-16 object-contain"
             />
           </a>
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
@@ -150,6 +155,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-

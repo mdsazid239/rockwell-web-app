@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useContactModal } from "../context/ContactContext.jsx";
 
 export default function Footer() {
@@ -6,57 +7,176 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-950 text-cream/80 pt-14 pb-8">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div>
-          <p className="font-serif text-2xl text-cream mb-3">11:11</p>
-          <p className="text-sm leading-relaxed">
-            Business Park — an address of consequence, on Linking Road, Bandra West, Mumbai.
-          </p>
-        </div>
+    <footer className="bg-navy-950 text-cream/80">
+      {/* Main Footer */}
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 lg:px-12 py-12 sm:py-14 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-12 gap-x-8 lg:gap-x-10 xl:gap-x-12">
+          
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-4">
+            <div className="w-full max-w-sm">
+              <p className="font-serif text-2xl sm:text-3xl text-cream tracking-tight mb-4">
+                Rockwell Developer
+              </p>
 
-        <div>
-          <p className="text-gold text-xs tracking-widest2 uppercase mb-4">Explore</p>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#overview" className="hover:text-gold transition-colors">Home</a></li>
-            <li><a href="#location" className="hover:text-gold transition-colors">Location</a></li>
-            <li><a href="#amenities" className="hover:text-gold transition-colors">Amenities</a></li>
-            <li><a href="#floor-plan" className="hover:text-gold transition-colors">Floor Plan</a></li>
-          </ul>
-        </div>
+              <p className="text-sm sm:text-[15px] leading-7 text-cream/60">
+                Business Park an address of consequence, on Linking Road,
+                Bandra West, Mumbai.
+              </p>
+            </div>
+          </div>
 
-        <div>
-          <p className="text-gold text-xs tracking-widest2 uppercase mb-4">Contact</p>
-          <ul className="space-y-2 text-sm">
-            <li>Linking Road, Bandra West, Mumbai</li>
-            <li>
-              <a href="mailto:info@rockwelldeveloper.com" className="hover:text-gold transition-colors">
-                info@rockwelldeveloper.com
-              </a>
-            </li>
-            <li>
-              <a href="tel:+91 9819999337" className="hover:text-gold transition-colors">
-                +91 9819999337
-              </a>
-            </li>
-          </ul>
-        </div>
+          {/* Explore */}
+          <div className="lg:col-span-2">
+            <p className="text-gold text-[11px] font-medium tracking-[0.28em] uppercase mb-5">
+              Explore
+            </p>
 
-        <div>
-          <p className="text-gold text-xs tracking-widest2 uppercase mb-4">Get in touch</p>
-          <p className="text-sm mb-4">Have a question about 11:11 Business Park?</p>
-          <button
-            onClick={() => openContact("Footer")}
-            className="border border-gold text-gold hover:bg-gold hover:text-navy transition-colors px-6 py-2.5 text-xs tracking-widest2 uppercase"
-          >
-            Contact Us
-          </button>
+            <ul className="space-y-3.5 text-sm">
+              <li>
+                <a
+                  href="#overview"
+                  className="text-cream/65 hover:text-gold transition-colors duration-300"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#location"
+                  className="text-cream/65 hover:text-gold transition-colors duration-300"
+                >
+                  Location
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#amenities"
+                  className="text-cream/65 hover:text-gold transition-colors duration-300"
+                >
+                  Amenities
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#floor-plan"
+                  className="text-cream/65 hover:text-gold transition-colors duration-300"
+                >
+                  Floor Plan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="sm:col-span-1 lg:col-span-3">
+            <p className="text-gold text-[11px] font-medium tracking-[0.28em] uppercase mb-5">
+              Contact
+            </p>
+
+            <div className="space-y-5 text-sm">
+              <div>
+                <p className="text-cream/35 text-[10px] uppercase tracking-[0.15em] mb-1.5">
+                  Address
+                </p>
+
+                <p className="text-cream/65 leading-6">
+                  Linking Road, Bandra West,
+                  <br />
+                  Mumbai
+                </p>
+              </div>
+
+              <div>
+                <p className="text-cream/35 text-[10px] uppercase tracking-[0.15em] mb-1.5">
+                  Email
+                </p>
+
+                <a
+                  href="mailto:sales@rockwelldeveloper.com"
+                  className="block text-cream/65 hover:text-gold transition-colors duration-300 break-words"
+                >
+                  sales@rockwelldeveloper.com
+                </a>
+              </div>
+
+              <div>
+                <p className="text-cream/35 text-[10px] uppercase tracking-[0.15em] mb-1.5">
+                  Phone
+                </p>
+
+                <a
+                  href="tel:+919819999337"
+                  className="text-cream/65 hover:text-gold transition-colors duration-300"
+                >
+                  +91 98199 99337
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Get In Touch */}
+          <div className="sm:col-span-1 lg:col-span-3">
+            <p className="text-gold text-[11px] font-medium tracking-[0.28em] uppercase mb-5">
+              Get In Touch
+            </p>
+
+            <div className="w-full max-w-xs">
+              <p className="text-sm sm:text-[15px] leading-7 text-cream/60 mb-6">
+                Have a question about 11:11 Business Park? Our team would be
+                happy to assist you.
+              </p>
+
+              <button
+                type="button"
+                onClick={() => openContact("Footer")}
+                className="inline-flex items-center justify-center w-full sm:w-auto min-w-[150px] border border-gold text-gold px-7 py-3.5 text-[11px] tracking-[0.22em] uppercase hover:bg-gold hover:text-navy transition-all duration-300"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 mt-12 pt-6 border-t border-cream/10 text-xs text-cream/50 flex flex-col sm:flex-row justify-between gap-2">
-        <p>© {year} Rockwell Developer. All rights reserved.</p>
-        <p>This website is for informational purposes and does not constitute an offer.</p>
+      {/* Bottom Footer */}
+      <div className="border-t border-cream/10">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 lg:px-12 py-6 sm:py-7">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-center">
+            
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-2 text-xs text-cream/40">
+              <Link
+                to="/terms-and-conditions"
+                className="hover:text-gold transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+
+              <span className="text-cream/15">|</span>
+
+              <Link
+                to="/privacy-policy"
+                className="hover:text-gold transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+
+            <p className="text-xs text-cream/35">
+              © {year} 11:11 Business Park. All rights reserved.
+            </p>
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-cream/5">
+            <p className="w-full max-w-4xl mx-auto text-center px-3 sm:px-6 md:px-8 text-[10px] sm:text-[11px] md:text-xs leading-5 sm:leading-6 text-cream/30">
+              This website is not an official site and it belongs to the
+              authorized channel partner for information purpose only.
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
