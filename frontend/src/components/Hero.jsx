@@ -70,9 +70,9 @@ export default function Hero() {
                   }}
                   className="w-full bg-transparent border border-cream/30 focus:border-gold outline-none px-4 py-3 text-sm text-cream placeholder:text-cream/50 transition-colors"
                 />
-                <p className="text-[10px] text-cream/50 mt-1">
+                {/* <p className="text-[10px] text-cream/50 mt-1">
                   Enter exactly 10 digits
-                </p>
+                </p> */}
               </div>
               <div>
                 <label className="block text-xs tracking-widest uppercase text-gold mb-2">
@@ -102,7 +102,7 @@ export default function Hero() {
         </div>
         <div className="order-1 lg:order-2 relative min-h-[55vh] lg:min-h-screen">
           <img
-            src="/images/hero-tower2.png"
+            src="/images/hero-tower3.png"
             alt="11:11 Business Park tower at dusk, Bandra West, Mumbai"
             className="absolute inset-0 w-full h-full object-cover"
           />

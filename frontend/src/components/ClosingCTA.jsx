@@ -6,10 +6,10 @@ export default function ClosingCTA() {
     <section className="relative bg-navy text-cream overflow-hidden">
       <div className="relative min-h-[70vh] flex items-center">
         <img
-          src="/images/skyline-dusk.jpg"
+          src="/images/skyline-dusk1.png"
           alt="Mumbai skyline at dusk with 11:11 Business Park tower"
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full "
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/70 to-navy/20" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 py-20 w-full">

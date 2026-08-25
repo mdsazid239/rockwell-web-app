@@ -20,7 +20,7 @@ export default function SplitSection({
                 alt={imageAlt}
                 loading="lazy"
                 decoding="async"
-                className="w-full aspect-[4/5] sm:aspect-[3/2] lg:aspect-auto lg:h-[550px] object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-105 motion-reduce:transition-none"
+                className="w-full aspect-[4/5] sm:aspect-[3/2] lg:aspect-auto lg:h-[550px] transition-transform duration-700 ease-out motion-safe:group-hover:scale-105 motion-reduce:transition-none"
               />
             </div>
           </div>

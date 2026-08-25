@@ -141,7 +141,7 @@ export default function ContactModal() {
         className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-default"
         onClick={handleClose}
       />
-      <div className="relative bg-cream w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div className="relative bg-[#4A3828] w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
         <div className="px-7 py-9 sm:px-10 sm:py-11">
 
           {/* Close Button */}

@@ -2,42 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================
+   ROCKWELL FONTS
+================================ */
+
+/* Cintarini - Cursive Font */
+@font-face {
+  font-family: "Cintarini";
+  src: url("./assets/fonts/Cintarini.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cambria - Title Font */
+@font-face {
+  font-family: "Cambria";
+  src: local("Cambria");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Poppins - Body Font */
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ================================
+   ROCKWELL COLORS
+================================ */
+
+:root {
+  --rockwell-blue: #081B39;
+  --rockwell-beige: #F5F3E8;
+  --rockwell-white: #FFFFFF;
+}
+
+
+/* ================================
+   GLOBAL
+================================ */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Jost", "Helvetica Neue", Arial, sans-serif;
-  background-color: #ffffff;
-  color: #0a1f3d;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--rockwell-beige);
+  color: var(--rockwell-blue);
 }
+
+
+/* ================================
+   HEADINGS
+================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cambria", serif;
+  font-weight: 400;
+}
+
+
+/* ================================
+   CURSIVE
+================================ */
+
+.font-cintarini {
+  font-family: "Cintarini", cursive;
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+.font-cambria {
+  font-family: "Cambria", serif;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* ================================
+   SELECTION
+================================ */
 
 ::selection {
-  background-color: #c9a24b;
-  color: #0a1f3d;
-}
-
-.text-shadow-soft {
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
-}
-
-/* Reduced motion respect */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-}
-
-/* Visible keyboard focus */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #c9a24b;
-  outline-offset: 2px;
+  background-color: var(--rockwell-blue);
+  color: var(--rockwell-beige);
 }

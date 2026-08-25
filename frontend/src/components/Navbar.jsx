@@ -10,68 +10,56 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { openContact } = useContactModal();
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    handleScroll(); // set correct state on mount
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const handleLinkClick = (href) => {
     setMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
   const handleContactClick = (source) => {
     setMenuOpen(false);
     openContact(source);
   };
+
   const handleLogoClick = (e) => {
     e.preventDefault();
     setMenuOpen(false);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen ? "bg-navy shadow-lg" : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-navy shadow-lg transition-all duration-300 bg-[#F8F2E3]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
             scrolled ? "h-16" : "h-20"
           }`}
         >
+          {/* Logo */}
           <a
             href="#top"
             onClick={handleLogoClick}
             className="flex items-center shrink-0"
             aria-label="Rockwell Developer"
           >
-            {/* <img
-              src="/images/Rockwell_Logo_White.png"
-              alt="Rockwell Developer"
-              className="block w-auto h-10 sm:h-11 lg:h-12 object-contain"
-            /> */}
             <img
-              src="/images/Rockwell_Logo_White.png"
+              src="/images/Rockwell_Logo_Black.png"
               alt="Rockwell Developer"
               className="block w-auto h-10 sm:h-11 lg:h-16 object-contain"
             />
           </a>
+
+          {/* Desktop navigation */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             <ul className="flex items-center gap-6 xl:gap-8">
               {LINKS.map((link) => (
@@ -95,6 +83,8 @@ export default function Navbar() {
               Contact Us
             </button>
           </div>
+
+          {/* Mobile menu toggle */}
           <button
             type="button"
             className="lg:hidden flex items-center justify-center w-10 h-10 text-cream focus:outline-none"
@@ -122,6 +112,8 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
+      {/* Mobile navigation drawer */}
       <div
         className={`lg:hidden overflow-hidden bg-navy border-t border-white/10 transition-all duration-300 ${
           menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
