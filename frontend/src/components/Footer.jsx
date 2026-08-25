@@ -109,10 +109,10 @@ export default function Footer() {
                 </p>
 
                 <a
-                  href="tel:+919819999337"
+                  href="tel:+919769966669"
                   className="text-cream/65 hover:text-gold transition-colors duration-300"
                 >
-                  +91 98199 99337
+                  +91 9769966669
                 </a>
               </div>
             </div>

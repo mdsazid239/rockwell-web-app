@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useContactModal } from "../context/ContactContext.jsx";
 const LINKS = [
-  { label: "Home", href: "#overview" },
+  { label: "Home", href: "#hero" },
   { label: "Location", href: "#location" },
   { label: "Amenities", href: "#amenities" },
   { label: "Floor Plan", href: "#floor-plan" },
