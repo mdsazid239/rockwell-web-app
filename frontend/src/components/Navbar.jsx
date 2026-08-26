@@ -133,10 +133,17 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-2">
-              <button
+              {/* <button
                 type="button"
                 onClick={() => handleContactClick("Mobile Menu")}
                 className="border border-gold text-gold hover:bg-gold hover:text-navy px-7 py-3 text-xs tracking-widest uppercase transition-all duration-300"
+              >
+                Contact Us
+              </button> */}
+              <button
+                type="button"
+                onClick={() => handleContactClick("Mobile Menu")}
+                className="w-full sm:w-auto bg-[#C9A24B] hover:bg-gold-light text-navy px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 text-[10px] sm:text-xs tracking-widest uppercase font-medium transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 Contact Us
               </button>
