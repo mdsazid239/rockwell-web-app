@@ -11,6 +11,7 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 lg:px-12 py-12 sm:py-14 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-y-12 gap-x-8 lg:gap-x-10 xl:gap-x-12">
+          
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4">
             <div className="w-full max-w-sm">
@@ -19,8 +20,8 @@ export default function Footer() {
               </p>
 
               <p className="text-sm sm:text-[15px] leading-7 text-cream/60">
-                Business Park an address of consequence, on Linking Road, Bandra
-                West, Mumbai.
+                Business Park an address of consequence, on Linking Road,
+                Bandra West, Mumbai.
               </p>
             </div>
           </div>
@@ -137,9 +138,9 @@ export default function Footer() {
                 Contact Us
               </button> */}
               <button
-                type="button"
-                onClick={() => handleContactClick("Navbar")}
-                className="
+  type="button"
+  onClick={() => handleContactClick("Navbar")}
+  className="
     group
 
     flex items-center justify-center
@@ -190,11 +191,11 @@ export default function Footer() {
 
     active:scale-95
   "
-              >
-                <span>Contact Us</span>
+>
+  <span>Contact Us</span>
 
-                <span
-                  className="
+  <span
+    className="
       ml-2
       text-base
       leading-none
@@ -202,18 +203,20 @@ export default function Footer() {
       duration-300
       group-hover:translate-x-1
     "
-                >
-                </span>
-              </button>
+  >
+    →
+  </span>
+</button>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-cream/10">
+      <div className=" border-cream/10">
         <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-10 lg:px-12 py-6 sm:py-7">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4 text-center">
+            
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-2 text-xs text-cream/40">
               <Link
                 to="/terms-and-conditions"
