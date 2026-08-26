@@ -56,9 +56,7 @@ export default function ContactModal() {
 
     if (!form.email.trim()) {
       newErrors.email = "Please enter your email.";
-    } else if (
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
-    ) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       newErrors.email = "Enter a valid email address.";
     }
     if (!form.phone) {
@@ -113,7 +111,7 @@ export default function ContactModal() {
       setStatus("success");
       setStatusMessage(
         res.message ||
-          "Thank you. Our team will get in touch with you shortly."
+          "Thank you. Our team will get in touch with you shortly.",
       );
 
       setForm(initialForm);
@@ -121,8 +119,7 @@ export default function ContactModal() {
       setStatus("error");
 
       setStatusMessage(
-        error.message ||
-          "Something went wrong. Please try again."
+        error.message || "Something went wrong. Please try again.",
       );
     }
   };
@@ -143,7 +140,6 @@ export default function ContactModal() {
       />
       <div className="relative bg-[#4A3828] w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
         <div className="px-7 py-9 sm:px-10 sm:py-11">
-
           {/* Close Button */}
           <button
             type="button"
@@ -153,44 +149,36 @@ export default function ContactModal() {
           >
             ×
           </button>
-          <p className="text-gold text-xs tracking-widest uppercase mb-2">
+          <p className="text-white text-xs tracking-widest uppercase mb-2">
             11:11 Business Park
           </p>
           <h2
             id="contact-modal-title"
-            className="font-serif text-2xl sm:text-3xl text-navy mb-2"
+            className="font-serif text-2xl sm:text-3xl text-white mb-2"
           >
             Contact Us
           </h2>
-          <p className="text-navy/70 text-sm mb-7">
+          <p className="text-white/70 text-sm mb-7">
             Share your details and our team will reach out to you shortly.
           </p>
           {status === "success" ? (
             <div className="py-8 text-center">
-              <p className="text-navy font-serif text-xl mb-3">
-                Thank you.
-              </p>
-              <p className="text-navy/80 text-sm mb-8">
-                {statusMessage}
-              </p>
+              <p className="text-white font-serif text-xl mb-3">Thank you.</p>
+              <p className="text-white/80 text-sm mb-8">{statusMessage}</p>
               <button
                 type="button"
                 onClick={handleClose}
-                className="bg-gold hover:bg-gold-light text-navy px-7 py-3 text-xs tracking-widest uppercase transition-colors"
+                className="bg-gold hover:bg-gold-light text-white px-7 py-3 text-xs tracking-widest uppercase transition-colors"
               >
                 Close
               </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="space-y-5"
-            >
+            <form onSubmit={handleSubmit} noValidate className="space-y-5">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs tracking-wide uppercase text-navy/70 mb-1.5"
+                  className="block text-xs tracking-wide uppercase text-white/70 mb-1.5"
                 >
                   Full Name
                 </label>
@@ -206,15 +194,13 @@ export default function ContactModal() {
                   placeholder="Your full name"
                 />
                 {errors.name && (
-                  <p className="text-red-600 text-xs mt-1">
-                    {errors.name}
-                  </p>
+                  <p className="text-red-600 text-xs mt-1">{errors.name}</p>
                 )}
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs tracking-wide uppercase text-navy/70 mb-1.5"
+                  className="block text-xs tracking-wide uppercase text-white/70 mb-1.5"
                 >
                   Email
                 </label>
@@ -228,15 +214,13 @@ export default function ContactModal() {
                   placeholder="you@company.com"
                 />
                 {errors.email && (
-                  <p className="text-red-600 text-xs mt-1">
-                    {errors.email}
-                  </p>
+                  <p className="text-red-600 text-xs mt-1">{errors.email}</p>
                 )}
               </div>
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-xs tracking-wide uppercase text-navy/70 mb-1.5"
+                  className="block text-xs tracking-wide uppercase text-white/70 mb-1.5"
                 >
                   Mobile Number
                 </label>
@@ -256,20 +240,16 @@ export default function ContactModal() {
                   {form.phone.length}/10 digits
                 </p>
                 {errors.phone && (
-                  <p className="text-red-600 text-xs mt-1">
-                    {errors.phone}
-                  </p>
+                  <p className="text-red-600 text-xs mt-1">{errors.phone}</p>
                 )}
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-xs tracking-wide uppercase text-navy/70 mb-1.5"
+                  className="block text-xs tracking-wide uppercase text-white/70 mb-1.5"
                 >
                   Message{" "}
-                  <span className="normal-case text-navy/40">
-                    (optional)
-                  </span>
+                  <span className="normal-case text-navy/40">(optional)</span>
                 </label>
                 <textarea
                   id="message"
@@ -282,18 +262,107 @@ export default function ContactModal() {
                 />
               </div>
               {status === "error" && (
-                <p className="text-red-600 text-sm">
-                  {statusMessage}
-                </p>
+                <p className="text-red-600 text-sm">{statusMessage}</p>
               )}
-              <button
+              {/* <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full bg-gold hover:bg-gold-light disabled:opacity-60 text-navy px-7 py-3.5 text-xs tracking-widest uppercase transition-colors"
+                className="w-full bg-gold hover:bg-gold-light disabled:opacity-60 text-white px-7 py-3.5 text-xs tracking-widest uppercase transition-colors"
               >
                 {status === "loading"
                   ? "Sending..."
                   : "Submit Enquiry"}
+              </button> */}
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="
+                group relative w-full
+                overflow-hidden
+                rounded-lg
+                bg-[#C9A24B]
+                text-white
+                px-5 py-3.5
+                sm:px-6 sm:py-4
+                lg:px-8 lg:py-4
+
+                text-[10px]
+                sm:text-[11px]
+               lg:text-xs
+
+               font-semibold
+               tracking-[0.18em]
+    sm:tracking-[0.22em]
+    lg:tracking-[0.25em]
+
+    uppercase
+
+    transition-all duration-500
+
+    hover:bg-[#B8903F]
+    hover:shadow-[0_12px_35px_rgba(0,0,0,0.18)]
+
+    active:scale-[0.99]
+
+    disabled:opacity-60
+    disabled:cursor-not-allowed
+  "
+              >
+                {/* Hover Effect */}
+                <span
+                  className="
+      absolute inset-0
+      translate-y-full
+      bg-white/10
+      transition-transform duration-500
+      group-hover:translate-y-0
+    "
+                />
+
+                {/* Button Content */}
+                <span
+                  className="
+      relative z-10
+      flex items-center justify-center
+      gap-2.5
+      sm:gap-3
+      lg:gap-4
+      whitespace-nowrap
+    "
+                >
+                  {status === "loading" ? (
+                    <>
+                      <span
+                        className="
+            h-3.5 w-3.5
+            sm:h-4 sm:w-4
+            rounded-full
+            border-2
+            border-white/30
+            border-t-white
+            animate-spin
+          "
+                      />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Enquiry</span>
+
+                      <span
+                        className="
+            text-base
+            sm:text-lg
+            leading-none
+            transition-transform duration-300
+            group-hover:translate-x-2
+          "
+                      >
+                        →
+                      </span>
+                    </>
+                  )}
+                </span>
               </button>
             </form>
           )}

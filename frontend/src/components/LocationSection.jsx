@@ -10,7 +10,7 @@ const POINTS = [
 export default function LocationSection() {
   return (
     <section
-      id="location"
+     
       className=" py-12 sm:py-16 lg:py-20"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,9 +36,9 @@ export default function LocationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
           {/* ================= CONTENT ================= */}
-          <div className="corner-frame px-5 py-7 sm:px-8 sm:py-9 md:px-10 md:py-11 lg:px-10 lg:py-12">
+          <div className="corner-frame px-5 py-7 sm:px-8 sm:py-9 md:px-10 md:py-11 lg:px-10 lg:py-12"id="location">
 
-            <p className="text-navy/80 text-sm sm:text-[15px] md:text-base leading-relaxed mb-4">
+            <p className="text-navy/80 text-sm sm:text-[15px] md:text-base leading-relaxed mb-4" >
               At the intersection of commerce, culture and connectivity lies
               one of Mumbai's most influential business districts.
             </p>
