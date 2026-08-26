@@ -55,7 +55,7 @@ export default function Hero() {
   "
         >
           <img
-            src="/images/hero-tower3.png"
+            src="/images/hero-tower4.png"
             alt="11:11 Business Park tower at dusk, Bandra West, Mumbai"
             className="
       absolute inset-0

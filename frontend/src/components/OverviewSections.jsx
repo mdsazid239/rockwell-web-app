@@ -10,7 +10,7 @@ const sections = [
     ],
     tagline:
       "Because exceptional businesses deserve more than space. They deserve presence.",
-    image: "/images/tower-day2.png",
+    image: "/images/tower-day3.png",
     imageAlt: "11:11 Business Park tower exterior in daylight",
     imageSide: "left",
   },
