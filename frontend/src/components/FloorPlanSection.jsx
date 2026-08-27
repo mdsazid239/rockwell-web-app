@@ -27,7 +27,7 @@ export default function FloorPlanSection() {
           "
         >
           <img
-            src="/images/tower-full1.png"
+            src="/images/tower-full.jpg"
             alt="11:11 Business Park full tower elevation"
             loading="lazy"
             className="
