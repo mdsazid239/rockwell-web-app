@@ -13,7 +13,7 @@ export default function AmenitiesSection() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-0 items-center px-6 sm:px-10 lg:px-0">
         <div className="relative h-[45vh] sm:h-[55vh] lg:h-[85vh] w-full">
           <img
-            src="/images/elevator-lobby1.png"
+            src="/images/elevater.png"
             alt="11:11 Business Park elevator lobby"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"

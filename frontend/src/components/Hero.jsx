@@ -5,43 +5,8 @@ export default function Hero() {
   const { openContact } = useContactModal();
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="top" className="relative bg-navy text-cream overflow-hidden">
-      {/* ================= HERO CONTENT ================= */}
+    <section id="hero" className="relative bg-navy text-cream overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
-        {/* ================= HERO IMAGE ================= */}
-        {/* <div
-          className="
-            order-1 lg:order-2
-            relative
-            w-full
-            h-[240px]
-            sm:h-[300px]
-            md:h-[380px]
-            lg:h-screen
-            lg:min-h-screen
-          "
-        >
-          <img
-            src="/images/hero-tower.png"
-            alt="11:11 Business Park tower at dusk, Bandra West, Mumbai"
-            className="absolute inset-0 w-full  object-cover object-center"
-          />
-
-          <div
-            className="
-              absolute inset-0
-              bg-gradient-to-t
-              from-navy/80
-              via-transparent
-              to-transparent
-              lg:bg-gradient-to-l
-              lg:from-transparent
-              lg:via-transparent
-              lg:to-navy/10
-            "
-          />
-        </div> */}
-        {/* ================= HERO IMAGE ================= */}
         <div
           className="
     order-1 lg:order-2
@@ -223,13 +188,10 @@ export default function Hero() {
                   "
                 />
               </div>
-
-              {/* Email */}
               <div>
                 <label className="block text-[10px] sm:text-xs tracking-widest uppercase text-gold mb-2">
                   Email
                 </label>
-
                 <input
                   type="email"
                   name="email"
@@ -250,8 +212,6 @@ export default function Hero() {
                   "
                 />
               </div>
-
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="
@@ -280,7 +240,6 @@ export default function Hero() {
                 Submit Enquiry
               </button>
             </form>
-
             {submitted && (
               <p className="mt-4 text-xs sm:text-sm text-green text-center">
                 Thank you! Your enquiry has been submitted.
@@ -289,8 +248,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* ================= BOTTOM BRANDING ================= */}
       <div
         className="
           relative
@@ -317,7 +274,6 @@ export default function Hero() {
         >
           11:11
         </h1>
-
         <p
           className="
             font-serif
@@ -347,3 +303,7 @@ export default function Hero() {
     </section>
   );
 }
+
+
+
+

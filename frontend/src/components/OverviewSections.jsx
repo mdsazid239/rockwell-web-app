@@ -10,7 +10,7 @@ const sections = [
     ],
     tagline:
       "Because exceptional businesses deserve more than space. They deserve presence.",
-    image: "/images/bullinding-L.png",
+    image: "/images/home-t.png",
     imageAlt: "11:11 Business Park tower exterior in daylight",
     imageSide: "left",
   },
@@ -57,3 +57,4 @@ export default function OverviewSections() {
     </div>
   );
 }
+

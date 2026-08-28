@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useState, useCallback } from "react";
-
 const ContactContext = createContext(null);
-
 export function ContactProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   const [sourcePage, setSourcePage] = useState("Homepage");

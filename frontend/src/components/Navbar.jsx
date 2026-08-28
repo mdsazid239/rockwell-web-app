@@ -1,28 +1,202 @@
+// import React, { useEffect, useState } from "react";
+// import { useContactModal } from "../context/ContactContext.jsx";
+// const LINKS = [
+//   { label: "Home", href: "hero" },
+//   { label: "Location", href: "location" },
+//   { label: "Amenities", href: "amenities" },
+//   { label: "Floor Plan", href: "floor-plan" },
+// ];
+// export default function Navbar() {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const { openContact } = useContactModal();
+
+//   useEffect(() => {
+//     const handleScroll = () => setScrolled(window.scrollY > 40);
+//     window.addEventListener("scroll", handleScroll);
+//     handleScroll(); // set correct state on mount
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const handleLinkClick = (href) => {
+//     setMenuOpen(false);
+//     const element = document.querySelector(href);
+//     if (element) {
+//       element.scrollIntoView({ behavior: "smooth", block: "start" });
+//     }
+//   };
+
+//   const handleContactClick = (source) => {
+//     setMenuOpen(false);
+//     openContact(source);
+//   };
+
+//   const handleLogoClick = (e) => {
+//     e.preventDefault();
+//     setMenuOpen(false);
+//     window.scrollTo({ top: 0, behavior: "smooth" });
+//   };
+
+//   return (
+//     <header className="fixed top-0 left-0 right-0 z-50 bg-navy shadow-lg transition-all duration-300 bg-[#F8F2E3]">
+//       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div
+//           className={`flex items-center justify-between transition-all duration-300 ${
+//             scrolled ? "h-16" : "h-20"
+//           }`}
+//         >
+//           {/* Logo */}
+//           <a
+//             href="#top"
+//             onClick={handleLogoClick}
+//             className="flex items-center shrink-0"
+//             aria-label="Rockwell Developer"
+//           >
+//             <img
+//               src="/images/Rockwell_Logo_Black.png"
+//               alt="Rockwell Developer"
+//               className="block w-auto h-10 sm:h-11 lg:h-16 object-contain"
+//             />
+//           </a>
+
+//           {/* Desktop navigation */}
+//           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+//             <ul className="flex items-center gap-6 xl:gap-8">
+//               {LINKS.map((link) => (
+//                 <li key={link.href}>
+//                   <button
+//                     type="button"
+//                     onClick={() => handleLinkClick(link.href)}
+//                     className="relative text-cream hover:text-gold text-xs xl:text-sm tracking-widest uppercase whitespace-nowrap transition-colors duration-200 group"
+//                   >
+//                     {link.label}
+//                     <span className="absolute left-0 -bottom-2 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
+//                   </button>
+//                 </li>
+//               ))}
+//             </ul>
+//             <button
+//               type="button"
+//               onClick={() => handleContactClick("Navbar")}
+//               className="border border-gold text-gold hover:bg-gold hover:text-navy px-5 xl:px-6 py-2.5 text-xs tracking-widest uppercase whitespace-nowrap transition-all duration-300"
+//             >
+//               Contact Us
+//             </button>
+//           </div>
+
+//           {/* Mobile menu toggle */}
+//           <button
+//             type="button"
+//             className="lg:hidden flex items-center justify-center w-10 h-10 text-cream focus:outline-none"
+//             aria-label="Toggle navigation menu"
+//             aria-expanded={menuOpen}
+//             onClick={() => setMenuOpen((open) => !open)}
+//           >
+//             <div className="relative w-6 h-5">
+//               <span
+//                 className={`absolute left-0 top-0 w-6 h-[2px] bg-current transition-all duration-300 ${
+//                   menuOpen ? "top-2 rotate-45" : ""
+//                 }`}
+//               />
+//               <span
+//                 className={`absolute left-0 top-2 w-6 h-[2px] bg-current transition-all duration-300 ${
+//                   menuOpen ? "opacity-0" : "opacity-100"
+//                 }`}
+//               />
+//               <span
+//                 className={`absolute left-0 top-4 w-6 h-[2px] bg-current transition-all duration-300 ${
+//                   menuOpen ? "top-2 -rotate-45" : ""
+//                 }`}
+//               />
+//             </div>
+//           </button>
+//         </div>
+//       </nav>
+
+//       {/* Mobile navigation drawer */}
+//       <div
+//         className={`lg:hidden overflow-hidden bg-navy border-t border-white/10 transition-all duration-300 ${
+//           menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+//         }`}
+//       >
+//         <nav className="px-6 py-7">
+//           <ul className="flex flex-col items-center gap-6">
+//             {LINKS.map((link) => (
+//               <li key={link.href}>
+//                 <button
+//                   type="button"
+//                   onClick={() => handleLinkClick(link.href)}
+//                   className="text-cream hover:text-gold text-sm tracking-widest uppercase transition-colors duration-200"
+//                 >
+//                   {link.label}
+//                 </button>
+//               </li>
+//             ))}
+//             <li className="pt-2">
+//               {/* <button
+//                 type="button"
+//                 onClick={() => handleContactClick("Mobile Menu")}
+//                 className="border border-gold text-gold hover:bg-gold hover:text-navy px-7 py-3 text-xs tracking-widest uppercase transition-all duration-300"
+//               >
+//                 Contact Us
+//               </button> */}
+//               <button
+//                 type="button"
+//                 onClick={() => handleContactClick("Mobile Menu")}
+//                 className="w-full sm:w-auto bg-[#C9A24B] hover:bg-gold-light text-navy px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 text-[10px] sm:text-xs tracking-widest uppercase font-medium transition-all duration-300 shadow-sm hover:shadow-md"
+//               >
+//                 Contact Us
+//               </button>
+//             </li>
+//           </ul>
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// }
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { useContactModal } from "../context/ContactContext.jsx";
+
 const LINKS = [
-  { label: "Home", href: "#hero" },
-  { label: "Location", href: "#location" },
-  { label: "Amenities", href: "#amenities" },
-  { label: "Floor Plan", href: "#floor-plan" },
+  { label: "Home", href: "hero" },
+  { label: "Location", href: "location" },
+  { label: "Amenities", href: "amenities" },
+  { label: "Floor Plan", href: "floor-plan" },
 ];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
   const { openContact } = useContactModal();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // set correct state on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const handleLinkClick = (href) => {
+  const handleLinkClick = (id) => {
     setMenuOpen(false);
-    const element = document.querySelector(href);
+
+    const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
 
@@ -31,14 +205,18 @@ export default function Navbar() {
     openContact(source);
   };
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
+  const handleLogoClick = (event) => {
+    event.preventDefault();
     setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy shadow-lg transition-all duration-300 bg-[#F8F2E3]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F2E3] shadow-lg transition-all duration-300">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
@@ -47,7 +225,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <a
-            href="#top"
+            href="#hero"
             onClick={handleLogoClick}
             className="flex items-center shrink-0"
             aria-label="Rockwell Developer"
@@ -59,7 +237,7 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop navigation */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             <ul className="flex items-center gap-6 xl:gap-8">
               {LINKS.map((link) => (
@@ -67,14 +245,17 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => handleLinkClick(link.href)}
-                    className="relative text-cream hover:text-gold text-xs xl:text-sm tracking-widest uppercase whitespace-nowrap transition-colors duration-200 group"
+                    className="relative text-navy hover:text-gold text-xs xl:text-sm tracking-widest uppercase whitespace-nowrap transition-colors duration-200 group"
                   >
                     {link.label}
+
                     <span className="absolute left-0 -bottom-2 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
                   </button>
                 </li>
               ))}
             </ul>
+
+            {/* Contact Button */}
             <button
               type="button"
               onClick={() => handleContactClick("Navbar")}
@@ -84,10 +265,10 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile Menu Toggle */}
           <button
             type="button"
-            className="lg:hidden flex items-center justify-center w-10 h-10 text-cream focus:outline-none"
+            className="lg:hidden flex items-center justify-center w-10 h-10 text-navy focus:outline-none"
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
@@ -98,11 +279,13 @@ export default function Navbar() {
                   menuOpen ? "top-2 rotate-45" : ""
                 }`}
               />
+
               <span
                 className={`absolute left-0 top-2 w-6 h-[2px] bg-current transition-all duration-300 ${
                   menuOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
+
               <span
                 className={`absolute left-0 top-4 w-6 h-[2px] bg-current transition-all duration-300 ${
                   menuOpen ? "top-2 -rotate-45" : ""
@@ -113,10 +296,12 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile navigation drawer */}
+      {/* Mobile Navigation Drawer */}
       <div
         className={`lg:hidden overflow-hidden bg-navy border-t border-white/10 transition-all duration-300 ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          menuOpen
+            ? "max-h-[500px] opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
         <nav className="px-6 py-7">
@@ -132,14 +317,9 @@ export default function Navbar() {
                 </button>
               </li>
             ))}
+
+            {/* Mobile Contact Button */}
             <li className="pt-2">
-              {/* <button
-                type="button"
-                onClick={() => handleContactClick("Mobile Menu")}
-                className="border border-gold text-gold hover:bg-gold hover:text-navy px-7 py-3 text-xs tracking-widest uppercase transition-all duration-300"
-              >
-                Contact Us
-              </button> */}
               <button
                 type="button"
                 onClick={() => handleContactClick("Mobile Menu")}
@@ -154,3 +334,4 @@ export default function Navbar() {
     </header>
   );
 }
+

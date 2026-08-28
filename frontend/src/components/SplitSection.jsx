@@ -51,3 +51,5 @@ export default function SplitSection({
     </section>
   );
 }
+
+
