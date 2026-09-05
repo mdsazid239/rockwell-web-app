@@ -12,9 +12,9 @@ export default function Hero() {
     order-1 lg:order-2
     relative
     w-full
-    h-[240px]
-    sm:h-[300px]
-    md:h-[380px]
+    h-[522px]
+    sm:h-[733px]
+    md:h-[833px]
     lg:h-screen
     lg:min-h-screen
   "
@@ -41,7 +41,7 @@ export default function Hero() {
       lg:bg-gradient-to-l
       lg:from-transparent
       lg:via-transparent
-      lg:to-navy/10
+      lg:to-navy/10 
     "
           />
         </div>

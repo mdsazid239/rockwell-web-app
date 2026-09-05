@@ -240,7 +240,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="mt-6 pt-5 border-t border-cream/5">
+          <div className="mt-6 pt-5 border-t border-cream/5 pb-10">
             <p className="w-full max-w-4xl mx-auto text-center px-3 sm:px-6 md:px-8 text-[10px] sm:text-[11px] md:text-xs leading-5 sm:leading-6 text-cream/30">
               This website is not an official site and it belongs to the
               authorized channel partner for information purpose only.
